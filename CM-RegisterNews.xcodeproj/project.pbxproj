@@ -16,6 +16,7 @@
 		D1C17A531B63D54C00E3134B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1C17A511B63D54C00E3134B /* LaunchScreen.xib */; };
 		D1C17A5F1B63D54C00E3134B /* CM_RegisterNewsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C17A5E1B63D54C00E3134B /* CM_RegisterNewsTests.m */; };
 		D1C17A6C1B63DAA000E3134B /* people.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D1C17A6B1B63DAA000E3134B /* people.mp4 */; };
+		D1C17A6F1B63EA5100E3134B /* Register.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C17A6E1B63EA5100E3134B /* Register.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,8 @@
 		D1C17A5D1B63D54C00E3134B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D1C17A5E1B63D54C00E3134B /* CM_RegisterNewsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CM_RegisterNewsTests.m; sourceTree = "<group>"; };
 		D1C17A6B1B63DAA000E3134B /* people.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = people.mp4; path = videos/people.mp4; sourceTree = "<group>"; };
+		D1C17A6D1B63EA5100E3134B /* Register.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Register.h; sourceTree = "<group>"; };
+		D1C17A6E1B63EA5100E3134B /* Register.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Register.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +140,8 @@
 			children = (
 				D1C17A491B63D54C00E3134B /* Start.h */,
 				D1C17A4A1B63D54C00E3134B /* Start.m */,
+				D1C17A6D1B63EA5100E3134B /* Register.h */,
+				D1C17A6E1B63EA5100E3134B /* Register.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -253,6 +258,7 @@
 				D1C17A451B63D54C00E3134B /* AppDelegate.m in Sources */,
 				D1C17A481B63D54C00E3134B /* CM_RegisterNews.xcdatamodeld in Sources */,
 				D1C17A4B1B63D54C00E3134B /* Start.m in Sources */,
+				D1C17A6F1B63EA5100E3134B /* Register.m in Sources */,
 				D1C17A421B63D54C00E3134B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

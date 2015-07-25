@@ -7,6 +7,7 @@
 //
 
 #import "Start.h"
+#import "Register.h"
 
 @interface Start ()
 
@@ -27,6 +28,9 @@
 - (void)initController {
     [self playVideo];
     
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
+    //[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+        
     self.lblBtnLogin.layer.borderColor    = [UIColor whiteColor].CGColor;
     self.lblBtnLogin.layer.borderWidth    = 1;
     self.lblBtnLogin.clipsToBounds        = YES;
@@ -65,6 +69,8 @@
 }
 
 - (IBAction)btnRegisterPressed:(id)sender {
+    Register *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"Register"];
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 
