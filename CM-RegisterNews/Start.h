@@ -16,6 +16,10 @@
 @property (strong, nonatomic) IBOutlet UILabel *lblBtnLogin;
 @property (strong, nonatomic) IBOutlet UILabel *lblBtnRegister;
 
+//Actions
+- (IBAction)btnLoginPressed:(id)sender;
+- (IBAction)btnRegisterPressed:(id)sender;
+
 
 @end
 
