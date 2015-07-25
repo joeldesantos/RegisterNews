@@ -83,8 +83,8 @@
 		D1C17A3E1B63D54C00E3134B /* CM-RegisterNews */ = {
 			isa = PBXGroup;
 			children = (
-				D1C17A691B63D57000E3134B /* Controllers */,
 				D1C17A681B63D56500E3134B /* Main */,
+				D1C17A691B63D57000E3134B /* Controllers */,
 				D1C17A4C1B63D54C00E3134B /* Main.storyboard */,
 				D1C17A4F1B63D54C00E3134B /* Images.xcassets */,
 				D1C17A511B63D54C00E3134B /* LaunchScreen.xib */,
