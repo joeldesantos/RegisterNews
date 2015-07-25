@@ -10,7 +10,7 @@
 		D1C17A421B63D54C00E3134B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C17A411B63D54C00E3134B /* main.m */; };
 		D1C17A451B63D54C00E3134B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C17A441B63D54C00E3134B /* AppDelegate.m */; };
 		D1C17A481B63D54C00E3134B /* CM_RegisterNews.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D1C17A461B63D54C00E3134B /* CM_RegisterNews.xcdatamodeld */; };
-		D1C17A4B1B63D54C00E3134B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C17A4A1B63D54C00E3134B /* ViewController.m */; };
+		D1C17A4B1B63D54C00E3134B /* Start.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C17A4A1B63D54C00E3134B /* Start.m */; };
 		D1C17A4E1B63D54C00E3134B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1C17A4C1B63D54C00E3134B /* Main.storyboard */; };
 		D1C17A501B63D54C00E3134B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1C17A4F1B63D54C00E3134B /* Images.xcassets */; };
 		D1C17A531B63D54C00E3134B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1C17A511B63D54C00E3134B /* LaunchScreen.xib */; };
@@ -34,8 +34,8 @@
 		D1C17A431B63D54C00E3134B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D1C17A441B63D54C00E3134B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D1C17A471B63D54C00E3134B /* CM_RegisterNews.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CM_RegisterNews.xcdatamodel; sourceTree = "<group>"; };
-		D1C17A491B63D54C00E3134B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D1C17A4A1B63D54C00E3134B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D1C17A491B63D54C00E3134B /* Start.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Start.h; sourceTree = "<group>"; };
+		D1C17A4A1B63D54C00E3134B /* Start.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Start.m; sourceTree = "<group>"; };
 		D1C17A4D1B63D54C00E3134B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D1C17A4F1B63D54C00E3134B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D1C17A521B63D54C00E3134B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -83,10 +83,8 @@
 		D1C17A3E1B63D54C00E3134B /* CM-RegisterNews */ = {
 			isa = PBXGroup;
 			children = (
-				D1C17A431B63D54C00E3134B /* AppDelegate.h */,
-				D1C17A441B63D54C00E3134B /* AppDelegate.m */,
-				D1C17A491B63D54C00E3134B /* ViewController.h */,
-				D1C17A4A1B63D54C00E3134B /* ViewController.m */,
+				D1C17A691B63D57000E3134B /* Controllers */,
+				D1C17A681B63D56500E3134B /* Main */,
 				D1C17A4C1B63D54C00E3134B /* Main.storyboard */,
 				D1C17A4F1B63D54C00E3134B /* Images.xcassets */,
 				D1C17A511B63D54C00E3134B /* LaunchScreen.xib */,
@@ -120,6 +118,24 @@
 				D1C17A5D1B63D54C00E3134B /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D1C17A681B63D56500E3134B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D1C17A431B63D54C00E3134B /* AppDelegate.h */,
+				D1C17A441B63D54C00E3134B /* AppDelegate.m */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		D1C17A691B63D57000E3134B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D1C17A491B63D54C00E3134B /* Start.h */,
+				D1C17A4A1B63D54C00E3134B /* Start.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,7 +240,7 @@
 			files = (
 				D1C17A451B63D54C00E3134B /* AppDelegate.m in Sources */,
 				D1C17A481B63D54C00E3134B /* CM_RegisterNews.xcdatamodeld in Sources */,
-				D1C17A4B1B63D54C00E3134B /* ViewController.m in Sources */,
+				D1C17A4B1B63D54C00E3134B /* Start.m in Sources */,
 				D1C17A421B63D54C00E3134B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
