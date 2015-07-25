@@ -15,6 +15,7 @@
 		D1C17A501B63D54C00E3134B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1C17A4F1B63D54C00E3134B /* Images.xcassets */; };
 		D1C17A531B63D54C00E3134B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1C17A511B63D54C00E3134B /* LaunchScreen.xib */; };
 		D1C17A5F1B63D54C00E3134B /* CM_RegisterNewsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C17A5E1B63D54C00E3134B /* CM_RegisterNewsTests.m */; };
+		D1C17A6C1B63DAA000E3134B /* people.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D1C17A6B1B63DAA000E3134B /* people.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		D1C17A581B63D54C00E3134B /* CM-RegisterNewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CM-RegisterNewsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1C17A5D1B63D54C00E3134B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D1C17A5E1B63D54C00E3134B /* CM_RegisterNewsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CM_RegisterNewsTests.m; sourceTree = "<group>"; };
+		D1C17A6B1B63DAA000E3134B /* people.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = people.mp4; path = videos/people.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 		D1C17A3E1B63D54C00E3134B /* CM-RegisterNews */ = {
 			isa = PBXGroup;
 			children = (
+				D1C17A6A1B63DA8B00E3134B /* videos */,
 				D1C17A681B63D56500E3134B /* Main */,
 				D1C17A691B63D57000E3134B /* Controllers */,
 				D1C17A4C1B63D54C00E3134B /* Main.storyboard */,
@@ -136,6 +139,14 @@
 				D1C17A4A1B63D54C00E3134B /* Start.m */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		D1C17A6A1B63DA8B00E3134B /* videos */ = {
+			isa = PBXGroup;
+			children = (
+				D1C17A6B1B63DAA000E3134B /* people.mp4 */,
+			);
+			name = videos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +231,7 @@
 			files = (
 				D1C17A4E1B63D54C00E3134B /* Main.storyboard in Resources */,
 				D1C17A531B63D54C00E3134B /* LaunchScreen.xib in Resources */,
+				D1C17A6C1B63DAA000E3134B /* people.mp4 in Resources */,
 				D1C17A501B63D54C00E3134B /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
