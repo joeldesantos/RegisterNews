@@ -8,12 +8,17 @@
 
 #import "Register.h"
 
+static UIStoryboard    *storyboard;
+static int iKeyboardHeight = 100;
+
 @interface Register ()
 
 @end
 
 @implementation Register
-
+/**********************************************************************************************/
+#pragma mark - Initialization methods
+/**********************************************************************************************/
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initController];
@@ -28,15 +33,93 @@
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+/**********************************************************************************************/
+#pragma mark - Action methods methods
+/**********************************************************************************************/
+- (IBAction)btnNextPressed:(id)sender {
 }
-*/
+
+- (IBAction)btnMenuPressed:(id)sender {
+}
+
+- (IBAction)btnGooglePressed:(id)sender {
+}
+
+- (IBAction)btnFacebookPressed:(id)sender {
+}
+/**********************************************************************************************/
+#pragma mark - Text fields delegates
+/**********************************************************************************************/
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    print(NSLog(@"txtName"))
+    /*if (textField == self.txtName) {
+    }*/
+    NSString *newString = [textField.text stringByReplacingCharactersInRange:range withString:string];
+    if ([newString length] > 0) {
+        if ([newString length] > nMaxTxtData) {
+            return NO;
+        }
+    }
+    return YES;
+}
+//-------------------------------------------------------------------------------
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    print(NSLog(@"textFieldDidBeginEditing"))
+    if (textField == self.txtName) {
+        [self.svRegister setContentOffset: CGPointMake(0, self.vDataGroup1.frame.origin.y + 20)  animated:YES];
+    }
+    else if (textField == self.txtFirstSurname) {
+        [self.svRegister setContentOffset: CGPointMake(0, self.vDataGroup1.frame.origin.y + 20)  animated:YES];
+    }
+    else if (textField == self.txtSecondSurname) {
+        [self.svRegister setContentOffset: CGPointMake(0, self.vDataGroup2.frame.origin.y - 10)  animated:YES];
+    }
+    else if (textField == self.txtEmail) {
+        [self.svRegister setContentOffset: CGPointMake(0, self.vDataGroup3.frame.origin.y - 10)  animated:YES];
+    }
+    else if (textField == self.txtPhone) {
+        [self.svRegister setContentOffset: CGPointMake(0, self.vDataGroup3.frame.origin.y - 10)  animated:YES];
+    }
+}
+//-------------------------------------------------------------------------------
+- (BOOL) textFieldShouldReturn:(UITextField *)textField{
+    //Method for moving to the next textfield when the "next" key is pressed
+    print(NSLog(@"textFieldShouldReturn"))
+    if(textField.returnKeyType == UIReturnKeyNext) {
+        if (textField == self.txtName) {
+            [self.txtFirstSurname becomeFirstResponder];
+        }
+        else if (textField == self.txtFirstSurname) {
+            [self.txtSecondSurname becomeFirstResponder];
+        }
+        else if (textField == self.txtSecondSurname) {
+            //[self.txtSecondSurname becomeFirstResponder];
+            [textField resignFirstResponder];
+            //self.vPicker.hidden = NO;
+        }
+        else if (textField == self.txtEmail) {
+            [self.txtPhone becomeFirstResponder];
+        }
+        else if (textField == self.txtPhone) {
+            [self.txtPassword becomeFirstResponder];
+        }
+        else if (textField == self.txtPassword) {
+            [self.txtPasswordConfirm becomeFirstResponder];
+        }
+        print(NSLog(@"UIReturnKeyNext"))
+    } else if (textField.returnKeyType == UIReturnKeyDone) {
+        [textField resignFirstResponder];
+    }
+    return YES;
+}
+/**********************************************************************************************/
+#pragma mark - Keyboard methods
+/**********************************************************************************************/
+- (void)keyboardWillShow:(NSNotification *)notification {
+    print(NSLog(@"keyboardDidShow"))
+    CGSize keyboardSize     = [[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    iKeyboardHeight         = MIN(keyboardSize.height,keyboardSize.width);
+    self.svRegister.contentSize = CGSizeMake(self.svRegister.frame.size.width, self.svRegister.frame.size.height + iKeyboardHeight + 40);
+}
 
 @end
