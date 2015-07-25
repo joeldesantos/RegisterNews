@@ -26,6 +26,16 @@
 
 - (void)initController {
     [self playVideo];
+    
+    self.lblBtnLogin.layer.borderColor    = [UIColor whiteColor].CGColor;
+    self.lblBtnLogin.layer.borderWidth    = 1;
+    self.lblBtnLogin.clipsToBounds        = YES;
+    self.lblBtnLogin.layer.cornerRadius   = 8;
+    
+    self.lblBtnRegister.layer.borderColor    = [UIColor whiteColor].CGColor;
+    self.lblBtnRegister.layer.borderWidth    = 1;
+    self.lblBtnRegister.clipsToBounds        = YES;
+    self.lblBtnRegister.layer.cornerRadius   = 8;
 }
 
 /**********************************************************************************************/

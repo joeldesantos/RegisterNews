@@ -13,6 +13,8 @@
 @interface Start : UIViewController
 @property (strong, nonatomic) MPMoviePlayerController *moviePlayer;
 @property (strong, nonatomic) IBOutlet UIView *vVideo;
+@property (strong, nonatomic) IBOutlet UILabel *lblBtnLogin;
+@property (strong, nonatomic) IBOutlet UILabel *lblBtnRegister;
 
 
 @end
