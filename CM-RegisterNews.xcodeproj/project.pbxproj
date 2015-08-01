@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D175F7921B6D1CC8000B7B11 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D175F78F1B6D1CC8000B7B11 /* FBSDKCoreKit.framework */; };
+		D175F7931B6D1CC8000B7B11 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D175F7901B6D1CC8000B7B11 /* FBSDKLoginKit.framework */; };
+		D175F7941B6D1CC8000B7B11 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D175F7911B6D1CC8000B7B11 /* FBSDKShareKit.framework */; };
 		D1C17A421B63D54C00E3134B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C17A411B63D54C00E3134B /* main.m */; };
 		D1C17A451B63D54C00E3134B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C17A441B63D54C00E3134B /* AppDelegate.m */; };
 		D1C17A481B63D54C00E3134B /* CM_RegisterNews.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D1C17A461B63D54C00E3134B /* CM_RegisterNews.xcdatamodeld */; };
@@ -34,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D175F78F1B6D1CC8000B7B11 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		D175F7901B6D1CC8000B7B11 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		D175F7911B6D1CC8000B7B11 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../../Documents/FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
 		D1C17A3C1B63D54C00E3134B /* CM-RegisterNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CM-RegisterNews.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1C17A401B63D54C00E3134B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D1C17A411B63D54C00E3134B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -62,6 +68,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D175F7931B6D1CC8000B7B11 /* FBSDKLoginKit.framework in Frameworks */,
+				D175F7921B6D1CC8000B7B11 /* FBSDKCoreKit.framework in Frameworks */,
+				D175F7941B6D1CC8000B7B11 /* FBSDKShareKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +87,9 @@
 		D1C17A331B63D54C00E3134B = {
 			isa = PBXGroup;
 			children = (
+				D175F78F1B6D1CC8000B7B11 /* FBSDKCoreKit.framework */,
+				D175F7901B6D1CC8000B7B11 /* FBSDKLoginKit.framework */,
+				D175F7911B6D1CC8000B7B11 /* FBSDKShareKit.framework */,
 				D1C17A3E1B63D54C00E3134B /* CM-RegisterNews */,
 				D1C17A5B1B63D54C00E3134B /* CM-RegisterNewsTests */,
 				D1C17A3D1B63D54C00E3134B /* Products */,
@@ -417,6 +429,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/walter/Documents/FacebookSDK,
+				);
 				INFOPLIST_FILE = "CM-RegisterNews/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -427,6 +443,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/walter/Documents/FacebookSDK,
+				);
 				INFOPLIST_FILE = "CM-RegisterNews/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -486,6 +506,7 @@
 				D1C17A641B63D54C00E3134B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D1C17A651B63D54D00E3134B /* Build configuration list for PBXNativeTarget "CM-RegisterNewsTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +515,7 @@
 				D1C17A671B63D54D00E3134B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
