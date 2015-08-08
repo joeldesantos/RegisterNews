@@ -7,12 +7,14 @@
 //
 
 #import "Register.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 static UIStoryboard    *storyboard;
 static int iKeyboardHeight = 100;
 
 @interface Register ()
-
+@property (nonatomic,strong) NSDictionary   *diFacebookResult;
 @end
 
 @implementation Register
@@ -23,12 +25,12 @@ static int iKeyboardHeight = 100;
     [super viewDidLoad];
     [self initController];
 }
-
+//-------------------------------------------------------------------------------
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+//-------------------------------------------------------------------------------
 - (void)initController {
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
@@ -38,14 +40,55 @@ static int iKeyboardHeight = 100;
 /**********************************************************************************************/
 - (IBAction)btnNextPressed:(id)sender {
 }
-
+//-------------------------------------------------------------------------------
 - (IBAction)btnMenuPressed:(id)sender {
 }
-
+//-------------------------------------------------------------------------------
 - (IBAction)btnGooglePressed:(id)sender {
 }
-
+//-------------------------------------------------------------------------------
 - (IBAction)btnFacebookPressed:(id)sender {
+    FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+    [login logInWithReadPermissions:@[@"public_profile",@"email"] handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+        if (error) {
+            // Process error
+        } else if (result.isCancelled) {
+            // Handle cancellations
+        } else {
+            // If you ask for multiple permissions at once, you
+            // should check if specific permissions missing
+            if ([result.grantedPermissions containsObject:@"email"] && [result.grantedPermissions containsObject:@"public_profile"]) {
+                // Do work
+                if ([FBSDKAccessToken currentAccessToken]) {
+                    [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:nil]
+                     startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+                         if (!error) {
+                             self.diFacebookResult = result;
+                             NSLog(@"fetched user:%@  and Email : %@", result,result[@"email"]);
+                             [self doLoginWithFacebook];
+                         }
+                     }];
+                }
+            }
+        }
+    }];
+}
+/**********************************************************************************************/
+#pragma mark - Operation methods
+/**********************************************************************************************/
+- (void)doLoginWithFacebook {
+    print(NSLog(@"self.diFacebookResult = %@", self.diFacebookResult))
+}
+//-------------------------------------------------------------------------------
+-(void)profileUpdated:(NSNotification *) notification{
+    NSLog(@"profileUpdated");
+    NSLog(@"Url: %@",[FBSDKProfile currentProfile].linkURL);
+    NSLog(@"User ID: %@",[FBSDKProfile currentProfile].userID);
+    NSLog(@"Name: %@",[FBSDKProfile currentProfile].firstName);
+    NSLog(@"Last name: %@",[FBSDKProfile currentProfile].lastName);
+    NSLog(@"Middle name: %@",[FBSDKProfile currentProfile].middleName);
+    NSLog(@"fetched user:%@  and Email : %@", self.diFacebookResult,self.diFacebookResult[@"email"]);
+    NSLog(@"diFacebookResult: %@", self.diFacebookResult);
 }
 /**********************************************************************************************/
 #pragma mark - Text fields delegates
@@ -121,5 +164,7 @@ static int iKeyboardHeight = 100;
     iKeyboardHeight         = MIN(keyboardSize.height,keyboardSize.width);
     self.svRegister.contentSize = CGSizeMake(self.svRegister.frame.size.width, self.svRegister.frame.size.height + iKeyboardHeight + 40);
 }
+
+
 
 @end

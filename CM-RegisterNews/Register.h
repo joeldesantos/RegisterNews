@@ -36,5 +36,35 @@
 - (IBAction)btnMenuPressed:(id)sender;
 - (IBAction)btnGooglePressed:(id)sender;
 - (IBAction)btnFacebookPressed:(id)sender;
-
+/*
+ [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(profileUpdated:) name:FBSDKProfileDidChangeNotification object:nil];
+ FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+ [login logInWithReadPermissions:@[@"email", @"public_profile"]
+ handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+ if (error) {
+ // Process error
+ } else if (result.isCancelled) {
+ // Handle cancellations
+ } else {
+ // If you ask for multiple permissions at once, you
+ // should check if specific permissions missing
+ if ([result.grantedPermissions containsObject:@"email"]) {
+ // Do work
+ NSLog(@"result: %@",result);
+ NSLog(@"profileUpdated");
+ NSLog(@"Url: %@",[FBSDKProfile currentProfile].linkURL);
+ NSLog(@"User ID: %@",[FBSDKProfile currentProfile].userID);
+ NSLog(@"Name: %@",[FBSDKProfile currentProfile].firstName);
+ NSLog(@"Last name: %@",[FBSDKProfile currentProfile].lastName);
+ NSLog(@"Middle name: %@",[FBSDKProfile currentProfile].middleName);
+ self.diFacebookResult = result;
+ NSLog(@"fetched user:%@  and Email : %@", self.diFacebookResult,self.diFacebookResult[@"email"]);
+ NSLog(@"diFacebookResult: %@", self.diFacebookResult);
+ 
+ }
+ }
+ }];
+ [FBSDKProfile enableUpdatesOnAccessTokenChange:YES];
+ [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(profileUpdated:) name:FBSDKProfileDidChangeNotification object:nil];
+ */
 @end

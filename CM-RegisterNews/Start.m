@@ -74,7 +74,7 @@
 }
 
 - (IBAction)btnRegisterPressed:(id)sender {
-    Register *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"TabBarMap"];
+    Register *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"Register"];
     [self presentViewController:vc animated:YES completion:nil];
 }
 
