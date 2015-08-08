@@ -67,4 +67,18 @@
  [FBSDKProfile enableUpdatesOnAccessTokenChange:YES];
  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(profileUpdated:) name:FBSDKProfileDidChangeNotification object:nil];
  */
+
+/*
+ //-------------------------------------------------------------------------------
+ -(void)profileUpdated:(NSNotification *) notification{
+ NSLog(@"profileUpdated");
+ NSLog(@"Url: %@",[FBSDKProfile currentProfile].linkURL);
+ NSLog(@"User ID: %@",[FBSDKProfile currentProfile].userID);
+ NSLog(@"Name: %@",[FBSDKProfile currentProfile].firstName);
+ NSLog(@"Last name: %@",[FBSDKProfile currentProfile].lastName);
+ NSLog(@"Middle name: %@",[FBSDKProfile currentProfile].middleName);
+ NSLog(@"fetched user:%@  and Email : %@", self.diFacebookResult,self.diFacebookResult[@"email"]);
+ NSLog(@"diFacebookResult: %@", self.diFacebookResult);
+ }
+ */
 @end

@@ -78,18 +78,20 @@ static int iKeyboardHeight = 100;
 /**********************************************************************************************/
 - (void)doLoginWithFacebook {
     print(NSLog(@"self.diFacebookResult = %@", self.diFacebookResult))
+    NSString *stName    = [self.diFacebookResult valueForKey:@"name"];
+    NSString *stId      = [self.diFacebookResult valueForKey:@"id"];
+    
+    NSArray *items      = [stName componentsSeparatedByString:@" "];
+    NSString *str1      = [items objectAtIndex:0];
+    NSString *str2      = [items objectAtIndex:1];
+    NSString *str3      = [items objectAtIndex:2];
+    print(NSLog(@"stName = %@", stName));
+    
+    self.txtName.text           = str1;
+    self.txtFirstSurname.text   = str2;
+    self.txtSecondSurname.text  = str3;
 }
-//-------------------------------------------------------------------------------
--(void)profileUpdated:(NSNotification *) notification{
-    NSLog(@"profileUpdated");
-    NSLog(@"Url: %@",[FBSDKProfile currentProfile].linkURL);
-    NSLog(@"User ID: %@",[FBSDKProfile currentProfile].userID);
-    NSLog(@"Name: %@",[FBSDKProfile currentProfile].firstName);
-    NSLog(@"Last name: %@",[FBSDKProfile currentProfile].lastName);
-    NSLog(@"Middle name: %@",[FBSDKProfile currentProfile].middleName);
-    NSLog(@"fetched user:%@  and Email : %@", self.diFacebookResult,self.diFacebookResult[@"email"]);
-    NSLog(@"diFacebookResult: %@", self.diFacebookResult);
-}
+
 /**********************************************************************************************/
 #pragma mark - Text fields delegates
 /**********************************************************************************************/
