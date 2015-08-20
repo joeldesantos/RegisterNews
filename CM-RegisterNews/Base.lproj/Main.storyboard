@@ -464,6 +464,32 @@
             </objects>
             <point key="canvasLocation" x="530" y="233"/>
         </scene>
+        <!--Share-->
+        <scene sceneID="xk8-uA-11u">
+            <objects>
+                <viewController storyboardIdentifier="Share" id="hCp-zC-q7B" customClass="Share" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vF9-QD-4AU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="q4c-X6-ozx">
+                                <rect key="frame" x="95" y="269" width="130" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Share to Facebook">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareBtn:" destination="hCp-zC-q7B" eventType="touchUpInside" id="hkL-tp-LGk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WVJ-cn-1E1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="920" y="233"/>
+        </scene>
     </scenes>
     <resources>
         <image name="ic_facebook.png" width="1024" height="1024"/>

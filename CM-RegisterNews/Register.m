@@ -49,7 +49,13 @@ static int iKeyboardHeight = 100;
 //-------------------------------------------------------------------------------
 - (IBAction)btnFacebookPressed:(id)sender {
     FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
-    [login logInWithReadPermissions:@[@"public_profile",@"email"] handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+    [login logInWithPublishPermissions:@[@"publish_actions", @"publish_pages", @"manage_pages"]
+                               handler:^(FBSDKLoginManagerLoginResult *result, NSError *error){
+//        if (error) {
+//
+//        }
+//    }];
+//    [login logInWithReadPermissions:@[@"public_profile",@"email"] handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
         if (error) {
             // Process error
         } else if (result.isCancelled) {
